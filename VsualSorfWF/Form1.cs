@@ -31,7 +31,7 @@ namespace VsualSorfWF
                 drawSort(array);
                 buffered.Render();
                 buffered.Dispose();
-                Thread.Sleep(50);
+                Thread.Sleep(10);
             }
         }
 

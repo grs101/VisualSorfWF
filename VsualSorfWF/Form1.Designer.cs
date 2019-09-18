@@ -188,6 +188,7 @@
             this.ClientSize = new System.Drawing.Size(743, 364);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.DoubleBuffered = true;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MinimumSize = new System.Drawing.Size(669, 410);
             this.Name = "Form1";
