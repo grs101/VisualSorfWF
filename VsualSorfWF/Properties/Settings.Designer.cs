@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace VsualSorfWF.Properties
+namespace VisualSorfWF.Properties
 {
 
 

@@ -3,7 +3,7 @@ using System.Windows.Forms;
 using System.Drawing;
 using System.Threading;
 
-namespace VsualSorfWF
+namespace VisualSorfWF
 {
     class Draw
     {

@@ -1,4 +1,4 @@
-﻿namespace VsualSorfWF
+﻿namespace VisualSorfWF
 {
 	partial class Form1
 	{
