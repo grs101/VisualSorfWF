@@ -1,24 +1,25 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace VisualSorfWF
 {
     class SelectionSort
     {
         //класс сортровки выборкой
-        public static void begin(ref int [] array, int i)
+        public static void begin(int [] array, ref PictureBox pictureBox1, int minimum, int max)
         {
-            int min = i;
-            for (int j = i + 1; j < array.Length; j++)
-                if (array[j] < array[min])
-                    min = j;
-
-            if (min != i)
-                MethodSwap.start(ref array[i], ref array[min]);
-
+            for (int i = 0; i < array.Length; i++)
+            {
+                int min = i;
+                for (int j = i + 1; j < array.Length; j++)
+                {
+                    if (array[j] < array[min])
+                        min = j;
+                }
+                if (min != i)
+                    MethodSwap.start(ref array[i], ref array[min]);
+                Draw.begin(ref pictureBox1, array, minimum, max);
+            }
         }
     }
 }

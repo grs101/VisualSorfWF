@@ -21,11 +21,11 @@ namespace VisualSorfWF
             array = new int[count];
             array = array.Select(x => random.Next(min, max)).ToArray();
 
-            for (int i = 0; i < array.Length; i++)
-            {
-                BubbleSort.begin(ref array, i);
-                Draw.begin(ref pictureBox1, array, min, max);
-            }
+            //for (int i = 0; i < array.Length; i++)
+            //{
+                BubbleSort.begin(array, ref pictureBox1, min, max);
+                //Draw.begin(ref pictureBox1, array, min, max);
+            //}
         }
     }
 }
