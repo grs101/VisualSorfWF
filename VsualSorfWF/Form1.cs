@@ -7,11 +7,13 @@ namespace VisualSorfWF
 {
     public partial class Form1 : Form
     {
+        Thread MyThread1;
         public Form1()
         {
             InitializeComponent();
         }
 
+        //кнопка запуска сортировки
         private void button1_Click(object sender, EventArgs e)
         {
             Random random = new Random();
@@ -21,10 +23,16 @@ namespace VisualSorfWF
             int max = (int)(maxLim.Value + 1);
             int [] array = new int[count];
             array = array.Select(x => random.Next(min, max)).ToArray();
-            Thread MyThread1 = new Thread(delegate () {
-                InsertSort.begin(array, ref pictureBox1, min, max);
+            MyThread1 = new Thread(delegate () {
+                QuickSort.begin(array, ref pictureBox1, 0, array.Length-1, min, max);
             });
             MyThread1.Start();
+        }
+
+        //остановка процесса сортировки
+        private void button2_Click(object sender, EventArgs e)
+        {
+            MyThread1.Abort();
         }
     }
 }
