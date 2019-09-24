@@ -79,7 +79,7 @@
             this.maxLim.Size = new System.Drawing.Size(163, 22);
             this.maxLim.TabIndex = 9;
             this.maxLim.Value = new decimal(new int[] {
-            55,
+            57,
             0,
             0,
             0});
