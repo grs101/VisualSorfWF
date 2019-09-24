@@ -55,7 +55,7 @@ namespace VisualSorfWF
             }
         }
 
-        public static void begin(ref int [] arr, ref PictureBox picbox, int min, int max)
+        public static void begin(int [] arr, ref PictureBox picbox, int min, int max)
         {
             //сортировка
             Pyramid_Sort(arr, arr.Length, ref picbox, min, max);

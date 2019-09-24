@@ -7,15 +7,15 @@ namespace VisualSorfWF
 {
     class Draw
     {
-        public static BufferedGraphics buffered;
+        static BufferedGraphics buffered;
 
         public static void begin(ref PictureBox picBox, int [] array, int min, int max)
         {
             drawMarking(ref picBox);
             drawSort(ref picBox, array, min, max);
-            Draw.buffered.Render();
-            Draw.buffered.Dispose();
-            Thread.Sleep(10);
+            buffered.Render();
+            buffered.Dispose();
+            Thread.Sleep(0);
         }
 
         //Отрисовка линий в клетку
