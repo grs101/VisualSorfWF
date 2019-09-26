@@ -39,6 +39,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.maxLim)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.minLim)).BeginInit();
@@ -51,6 +52,7 @@
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.comboBox1);
             this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.maxLim);
             this.groupBox1.Controls.Add(this.minLim);
@@ -63,7 +65,7 @@
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(862, 75);
+            this.groupBox1.Size = new System.Drawing.Size(860, 112);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Настройки";
@@ -71,7 +73,7 @@
             // button2
             // 
             this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.Location = new System.Drawing.Point(583, 24);
+            this.button2.Location = new System.Drawing.Point(581, 31);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(132, 44);
             this.button2.TabIndex = 10;
@@ -118,7 +120,7 @@
             this.countElements.Size = new System.Drawing.Size(132, 22);
             this.countElements.TabIndex = 7;
             this.countElements.Value = new decimal(new int[] {
-            10,
+            100,
             0,
             0,
             0});
@@ -126,7 +128,7 @@
             // button1
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(722, 23);
+            this.button1.Location = new System.Drawing.Point(720, 31);
             this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(132, 44);
@@ -171,11 +173,11 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.Controls.Add(this.pictureBox1);
-            this.groupBox2.Location = new System.Drawing.Point(13, 99);
+            this.groupBox2.Location = new System.Drawing.Point(13, 123);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox2.Size = new System.Drawing.Size(862, 317);
+            this.groupBox2.Size = new System.Drawing.Size(860, 377);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Отображение массива";
@@ -190,15 +192,30 @@
             this.pictureBox1.Location = new System.Drawing.Point(8, 23);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(846, 286);
+            this.pictureBox1.Size = new System.Drawing.Size(844, 346);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Сортировка пузырьком (Bubble sort)",
+            "Сортировка кучей (Heap sort)",
+            "Сортировка вставками (Insert sort)",
+            "Сортировка быстрая (quick sort)",
+            "Сортировка выборкой (selection sort)"});
+            this.comboBox1.Location = new System.Drawing.Point(7, 81);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(467, 24);
+            this.comboBox1.TabIndex = 2;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(894, 429);
+            this.ClientSize = new System.Drawing.Size(892, 513);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.DoubleBuffered = true;
@@ -208,6 +225,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Визуализация сортировки";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.maxLim)).EndInit();
@@ -232,6 +250,7 @@
 		private System.Windows.Forms.NumericUpDown minLim;
 		private System.Windows.Forms.NumericUpDown countElements;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }
 
