@@ -7,7 +7,7 @@ namespace VisualSorfWF
     {
         //класс сортровки пузырьком
 
-        public static void begin(int[] array, ref PictureBox pictureBox1, int minimum, int max)
+        public static void begin(ref int[] array, ref PictureBox pictureBox1, int minimum, int max)
         {
             for (int i = 0; i < array.Length; i++)
             {

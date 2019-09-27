@@ -6,7 +6,7 @@ namespace VisualSorfWF
     class SelectionSort
     {
         //класс сортровки выборкой
-        public static void begin(int [] array, ref PictureBox pictureBox1, int minimum, int max)
+        public static void begin(ref int [] array, ref PictureBox pictureBox1, int minimum, int max)
         {
             for (int i = 0; i < array.Length; i++)
             {
@@ -18,7 +18,10 @@ namespace VisualSorfWF
                 }
                 if (min != i)
                     MethodSwap.start(ref array[i], ref array[min]);
-                Draw.begin(ref pictureBox1, array, minimum, max);
+                if (pictureBox1 != null)
+                {
+                    Draw.begin(ref pictureBox1, array, minimum, max);
+                }
             }
         }
     }

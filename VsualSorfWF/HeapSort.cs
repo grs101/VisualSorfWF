@@ -31,7 +31,7 @@ namespace VisualSorfWF
             return i;
         }
 
-        static void Pyramid_Sort(Int32[] arr, Int32 len, ref PictureBox picbox, int min, int max)
+        static void Pyramid_Sort(ref Int32[] arr, Int32 len, ref PictureBox picbox, int min, int max)
         {
             //step 1: building the pyramid
             for (Int32 i = len / 2 - 1; i >= 0; --i)
@@ -45,7 +45,10 @@ namespace VisualSorfWF
             for (Int32 k = len - 1; k > 0; --k)
             {
                 MethodSwap.start(ref arr[0], ref arr[k]);
-                Draw.begin(ref picbox, arr, min, max);
+                if (picbox != null)
+                {
+                    Draw.begin(ref picbox, arr, min, max);
+                }
                 Int32 i = 0, prev_i = -1;
                 while (i != prev_i)
                 {
@@ -55,18 +58,10 @@ namespace VisualSorfWF
             }
         }
 
-        public static void begin(int [] arr, ref PictureBox picbox, int min, int max)
+        public static void begin(ref int [] arr, ref PictureBox picbox, int min, int max)
         {
             //сортировка
-            Pyramid_Sort(arr, arr.Length, ref picbox, min, max);
-
-            System.Console.WriteLine("\n\nThe array after sorting:");
-            foreach (Int32 x in arr)
-            {
-                System.Console.Write(x + " ");
-            }
-            System.Console.WriteLine("\n\nPress the <Enter> key");
-            System.Console.ReadLine();
+            Pyramid_Sort(ref arr, arr.Length, ref picbox, min, max);
         }
     }
 }

@@ -24,11 +24,13 @@ namespace VisualSorfWF
             if (radioButton1.Checked)
             {
                 cf1 = new CalcForm();
+                this.Hide();
                 cf1.Show();
             }
             else if(radioButton2.Checked)
             {
                 mf1 = new Main();
+                this.Hide();
                 mf1.Show();
             }
         }

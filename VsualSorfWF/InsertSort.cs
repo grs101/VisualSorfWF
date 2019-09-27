@@ -5,7 +5,7 @@ namespace VisualSorfWF
 {
     class InsertSort
     {
-        public static void begin(int[] arr, ref PictureBox picbox, int min, int max)
+        public static void begin(ref int[] arr, ref PictureBox picbox, int min, int max)
         {
             for (int i = 1; i < arr.Length; i++)
             {
@@ -17,7 +17,10 @@ namespace VisualSorfWF
                         break;
 
                     MethodSwap.start(ref arr[j+1], ref arr[j]);
-                    Draw.begin(ref picbox, arr, min, max);
+                    if (picbox != null)
+                    {
+                        Draw.begin(ref picbox, arr, min, max);
+                    }
                 }
             }
         }

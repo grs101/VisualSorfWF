@@ -115,7 +115,7 @@
             this.maxLim.Location = new System.Drawing.Point(311, 43);
             this.maxLim.Margin = new System.Windows.Forms.Padding(4);
             this.maxLim.Maximum = new decimal(new int[] {
-            57,
+            55,
             0,
             0,
             0});
@@ -123,7 +123,7 @@
             this.maxLim.Size = new System.Drawing.Size(163, 22);
             this.maxLim.TabIndex = 9;
             this.maxLim.Value = new decimal(new int[] {
-            57,
+            55,
             0,
             0,
             0});

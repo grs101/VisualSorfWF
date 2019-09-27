@@ -21,20 +21,19 @@ namespace VisualSorfWF
             int count = (int)countElements.Value;
             int min = (int)minLim.Value;
             int max = (int)(maxLim.Value + 1);
-            array = new int[count];
-            array = array.Select(x => random.Next(min, max)).ToArray();
+            FillArray.generate_rand_data_for_array(ref array, count, min, max);
             if (MyThread1 != null)
             {
                 if (!MyThread1.IsAlive) //проверка на выполнение потока. Не запускать, если он запущен
                 {
                     //главный запуск
-                    start(ref pictureBox1, ref comboBox1, ref MyThread1, min, max);
+                    start(ref pictureBox1, ref comboBox1, array, ref MyThread1, min, max);
                 }
             }
             else
             {
                 //главный запуск
-                start(ref pictureBox1, ref comboBox1, ref MyThread1, min, max);
+                start(ref pictureBox1, ref comboBox1, array, ref MyThread1, min, max);
             }
         }
 
@@ -50,7 +49,7 @@ namespace VisualSorfWF
             comboBox1.SelectedItem = comboBox1.Items[0];
         }
         //запуск сортировки с передачей ссылок на picturebox и combobox
-        static void start(ref PictureBox p, ref ComboBox c, ref Thread t, int min, int max)
+        public static void start(ref PictureBox p, ref ComboBox c, int[] temp_arr, ref Thread t, int min, int max)
         {
             PictureBox p1 = p; //создаю копию на ссылку picturebox, чтобы передать в Thread
             switch (c.SelectedIndex)
@@ -59,7 +58,7 @@ namespace VisualSorfWF
                     {
                         t = new Thread(delegate ()
                         {
-                            BubbleSort.begin(array, ref p1, min, max);
+                            BubbleSort.begin(ref temp_arr, ref p1, min, max);
                         });
                         t.Start();
                         break;
@@ -68,7 +67,7 @@ namespace VisualSorfWF
                     {
                         t = new Thread(delegate ()
                         {
-                            HeapSort.begin(array, ref p1, min, max);
+                            HeapSort.begin(ref temp_arr, ref p1, min, max);
                         });
                         t.Start();
                         break;
@@ -77,7 +76,7 @@ namespace VisualSorfWF
                     {
                         t = new Thread(delegate ()
                         {
-                            InsertSort.begin(array, ref p1, min, max);
+                            InsertSort.begin(ref temp_arr, ref p1, min, max);
                         });
                         t.Start();
                         break;
@@ -86,7 +85,7 @@ namespace VisualSorfWF
                     {
                         t = new Thread(delegate ()
                         {
-                            QuickSort.begin(array, ref p1, 0, array.Length - 1, min, max);
+                            QuickSort.begin(ref temp_arr, ref p1, 0, temp_arr.Length - 1, min, max);
                         });
                         t.Start();
                         break;
@@ -95,7 +94,7 @@ namespace VisualSorfWF
                     {
                         t = new Thread(delegate ()
                         {
-                            SelectionSort.begin(array, ref p1, min, max);
+                            SelectionSort.begin(ref temp_arr, ref p1, min, max);
                         });
                         t.Start();
                         break;
