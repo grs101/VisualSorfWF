@@ -108,5 +108,10 @@ namespace VisualSorfWF
         {
             Close();
         }
+        //действие при закрытии формы
+        private void Main_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
