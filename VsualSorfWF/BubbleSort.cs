@@ -15,7 +15,10 @@ namespace VisualSorfWF
                 for (int j = 1; j < array.Length - i; j++)
                     if (array[j - 1] > array[j])
                         MethodSwap.start(ref array[j - 1], ref array[j]);
-                Draw.begin(ref pictureBox1, array, minimum, max);
+                if (pictureBox1 != null)
+                {
+                    Draw.begin(ref pictureBox1, array, minimum, max);
+                }
             }
         }
     }

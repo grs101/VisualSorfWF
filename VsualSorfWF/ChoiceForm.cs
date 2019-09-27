@@ -12,7 +12,8 @@ namespace VisualSorfWF
 {
     public partial class ChoiceForm : Form
     {
-        Main m1;
+        Main mf1; //экземпляр формы визуализации
+        CalcForm cf1; //экземпляр формы расчетов
         public ChoiceForm()
         {
             InitializeComponent();
@@ -22,12 +23,13 @@ namespace VisualSorfWF
         {
             if (radioButton1.Checked)
             {
-
+                cf1 = new CalcForm();
+                cf1.Show();
             }
             else if(radioButton2.Checked)
             {
-                m1 = new Main();
-                m1.Show();
+                mf1 = new Main();
+                mf1.Show();
             }
         }
     }
