@@ -5,11 +5,11 @@ using System.Threading;
 
 namespace VisualSorfWF
 {
-    public partial class Form1 : Form
+    public partial class Main : Form
     {
         static int[] array;
         Thread MyThread1;
-        public Form1()
+        public Main()
         {
             InitializeComponent();
         }
@@ -101,6 +101,12 @@ namespace VisualSorfWF
                         break;
                     }
             }
+        }
+
+        //полный выход из окна/программы
+        private void exit_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace VisualSorfWF
 {
-	partial class Form1
+	partial class Main
 	{
 		/// <summary>
 		/// Требуется переменная конструктора.
@@ -29,6 +29,7 @@
 		private void InitializeComponent()
 		{
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.exit = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.button2 = new System.Windows.Forms.Button();
             this.maxLim = new System.Windows.Forms.NumericUpDown();
@@ -40,7 +41,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button3 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.maxLim)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.minLim)).BeginInit();
@@ -53,7 +53,7 @@
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox1.Controls.Add(this.button3);
+            this.groupBox1.Controls.Add(this.exit);
             this.groupBox1.Controls.Add(this.comboBox1);
             this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.maxLim);
@@ -71,6 +71,18 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Настройки";
+            // 
+            // exit
+            // 
+            this.exit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.exit.Location = new System.Drawing.Point(731, 80);
+            this.exit.Margin = new System.Windows.Forms.Padding(4);
+            this.exit.Name = "exit";
+            this.exit.Size = new System.Drawing.Size(121, 31);
+            this.exit.TabIndex = 11;
+            this.exit.Text = "Exit";
+            this.exit.UseVisualStyleBackColor = true;
+            this.exit.Click += new System.EventHandler(this.exit_Click);
             // 
             // comboBox1
             // 
@@ -213,17 +225,6 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // button3
-            // 
-            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button3.Location = new System.Drawing.Point(731, 80);
-            this.button3.Margin = new System.Windows.Forms.Padding(4);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(121, 31);
-            this.button3.TabIndex = 11;
-            this.button3.Text = "Exit";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -264,7 +265,7 @@
 		private System.Windows.Forms.NumericUpDown countElements;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button exit;
     }
 }
 
