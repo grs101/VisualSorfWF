@@ -19,7 +19,7 @@ namespace VisualSorfWF
                     MethodSwap.start(ref arr[j+1], ref arr[j]);
                     if (picbox != null)
                     {
-                        Draw.begin(ref picbox, arr, min, max);
+                        Draw.begin(ref picbox, arr, max);
                     }
                 }
             }

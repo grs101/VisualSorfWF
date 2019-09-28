@@ -21,7 +21,7 @@ namespace VisualSorfWF
                     MethodSwap.start(ref array[pivot], ref array[i]);
                     if (picbox != null)
                     {
-                        Draw.begin(ref picbox, array, minV, maxV);
+                        Draw.begin(ref picbox, array, maxV);
                     }
                 }
             }
@@ -30,7 +30,7 @@ namespace VisualSorfWF
             MethodSwap.start(ref array[pivot], ref array[maxIndex]);
             if (picbox != null)
             {
-                Draw.begin(ref picbox, array, minV, maxV);
+                Draw.begin(ref picbox, array, maxV);
             }
             return pivot;
         }

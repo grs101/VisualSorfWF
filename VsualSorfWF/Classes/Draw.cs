@@ -9,10 +9,10 @@ namespace VisualSorfWF
     {
         static BufferedGraphics buffered;
 
-        public static void begin(ref PictureBox picBox, int [] array, int min, int max)
+        public static void begin(ref PictureBox picBox, int [] array, int max)
         {
             drawMarking(ref picBox);
-            drawSort(ref picBox, array, min, max);
+            drawSort(ref picBox, array, max);
             buffered.Render();
             buffered.Dispose();
             Thread.Sleep(0);
@@ -31,11 +31,11 @@ namespace VisualSorfWF
         }
 
         //Отрисовка сортировки
-        static void drawSort(ref PictureBox picbox, int[] array, int min, int max)
+        static void drawSort(ref PictureBox picbox, int[] array, int max)
         {
             bool flag = true;
             Pen pen = new Pen(Color.DarkOrange);
-            for (int i = min; i <= max; i++)
+            for (int i = 0; i <= max; i++)
             {
                 for (int j = 0; j < array.Length; j++)
                 {
