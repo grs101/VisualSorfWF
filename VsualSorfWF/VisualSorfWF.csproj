@@ -44,41 +44,41 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BubbleSort.cs" />
-    <Compile Include="CalcForm.cs">
+    <Compile Include="Classes\BubbleSort.cs" />
+    <Compile Include="Forms\CalcForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CalcForm.Designer.cs">
+    <Compile Include="Forms\CalcForm.Designer.cs">
       <DependentUpon>CalcForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ChoiceForm.cs">
+    <Compile Include="Forms\ChoiceForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ChoiceForm.Designer.cs">
+    <Compile Include="Forms\ChoiceForm.Designer.cs">
       <DependentUpon>ChoiceForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Draw.cs" />
-    <Compile Include="FillArray.cs" />
-    <Compile Include="Main.cs">
+    <Compile Include="Classes\Draw.cs" />
+    <Compile Include="Classes\FillArray.cs" />
+    <Compile Include="Forms\Main.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Main.Designer.cs">
+    <Compile Include="Forms\Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
-    <Compile Include="HeapSort.cs" />
-    <Compile Include="InsertSort.cs" />
-    <Compile Include="MethodSwap.cs" />
+    <Compile Include="Classes\HeapSort.cs" />
+    <Compile Include="Classes\InsertSort.cs" />
+    <Compile Include="Classes\MethodSwap.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="QuickSort.cs" />
-    <Compile Include="SelectionSort.cs" />
-    <EmbeddedResource Include="CalcForm.resx">
+    <Compile Include="Classes\QuickSort.cs" />
+    <Compile Include="Classes\SelectionSort.cs" />
+    <EmbeddedResource Include="Forms\CalcForm.resx">
       <DependentUpon>CalcForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ChoiceForm.resx">
+    <EmbeddedResource Include="Forms\ChoiceForm.resx">
       <DependentUpon>ChoiceForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Main.resx">
+    <EmbeddedResource Include="Forms\Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
