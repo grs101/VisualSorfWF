@@ -41,18 +41,23 @@
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.trackBar1 = new System.Windows.Forms.TrackBar();
+            this.speed_label = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.maxLim)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.minLim)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.countElements)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.speed_label);
+            this.groupBox1.Controls.Add(this.trackBar1);
             this.groupBox1.Controls.Add(this.exit);
             this.groupBox1.Controls.Add(this.comboBox1);
             this.groupBox1.Controls.Add(this.button2);
@@ -132,6 +137,11 @@
             // 
             this.minLim.Location = new System.Drawing.Point(148, 43);
             this.minLim.Margin = new System.Windows.Forms.Padding(4);
+            this.minLim.Maximum = new decimal(new int[] {
+            55,
+            0,
+            0,
+            0});
             this.minLim.Name = "minLim";
             this.minLim.Size = new System.Drawing.Size(155, 22);
             this.minLim.TabIndex = 8;
@@ -225,6 +235,25 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // trackBar1
+            // 
+            this.trackBar1.Location = new System.Drawing.Point(503, 56);
+            this.trackBar1.Maximum = 100;
+            this.trackBar1.Name = "trackBar1";
+            this.trackBar1.Size = new System.Drawing.Size(125, 56);
+            this.trackBar1.TabIndex = 2;
+            this.trackBar1.TickFrequency = 5;
+            this.trackBar1.Scroll += new System.EventHandler(this.trackBar1_Scroll);
+            // 
+            // speed_label
+            // 
+            this.speed_label.AutoSize = true;
+            this.speed_label.Location = new System.Drawing.Point(540, 87);
+            this.speed_label.Name = "speed_label";
+            this.speed_label.Size = new System.Drawing.Size(38, 17);
+            this.speed_label.TabIndex = 12;
+            this.speed_label.Text = "0 ms";
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -248,6 +277,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.countElements)).EndInit();
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
             this.ResumeLayout(false);
 
 		}
@@ -267,6 +297,8 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button exit;
+        private System.Windows.Forms.TrackBar trackBar1;
+        private System.Windows.Forms.Label speed_label;
     }
 }
 

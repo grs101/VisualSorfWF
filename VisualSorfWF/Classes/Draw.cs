@@ -7,6 +7,7 @@ namespace VisualSorfWF
 {
     class Draw
     {
+        public static int speed = 0;
         static BufferedGraphics buffered;
 
         public static void begin(ref PictureBox picBox, int [] array, int max)
@@ -15,7 +16,7 @@ namespace VisualSorfWF
             drawSort(ref picBox, array, max);
             buffered.Render();
             buffered.Dispose();
-            Thread.Sleep(0);
+            Thread.Sleep(speed);
         }
 
         //Отрисовка линий в клетку

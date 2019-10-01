@@ -112,5 +112,12 @@ namespace VisualSorfWF
         {
             Application.Exit();
         }
+        
+        //событие перемещения ползунка скролла
+        private void trackBar1_Scroll(object sender, EventArgs e)
+        {
+            Draw.speed = trackBar1.Value;
+            speed_label.Text = trackBar1.Value.ToString() + " ms";
+        }
     }
 }
