@@ -17,30 +17,48 @@ namespace VisualSorfWF
         //кнопка запуска сортировки
         private void button1_Click(object sender, EventArgs e)
         {
-            Random random = new Random();
-            int count = (int)countElements.Value;
-            int min = (int)minLim.Value;
-            int max = (int)(maxLim.Value + 1);
-            FillArray.generate_rand_data_for_array(ref array, count, min, max);
-            if (MyThread1 != null)
+            try
             {
-                if (!MyThread1.IsAlive) //проверка на выполнение потока. Не запускать, если он запущен
+                Random random = new Random();
+                int count = (int)countElements.Value;
+                int min = (int)minLim.Value;
+                int max = (int)(maxLim.Value + 1);
+                FillArray.generate_rand_data_for_array(ref array, count, min, max);
+                if (MyThread1 != null)
+                {
+                    if (!MyThread1.IsAlive) //проверка на выполнение потока. Не запускать, если он запущен
+                    {
+                        //главный запуск
+                        start(ref pictureBox1, ref comboBox1, array, ref MyThread1, min, max);
+                    }
+                }
+                else
                 {
                     //главный запуск
                     start(ref pictureBox1, ref comboBox1, array, ref MyThread1, min, max);
                 }
             }
-            else
+            catch
             {
-                //главный запуск
-                start(ref pictureBox1, ref comboBox1, array, ref MyThread1, min, max);
+                MessageBox.Show("Error", "Неизвестная ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         //остановка процесса сортировки
         private void button2_Click(object sender, EventArgs e)
         {
-            MyThread1.Abort();
+            try
+            {
+                MyThread1.Abort();
+            }
+            catch(NullReferenceException)
+            {
+                MessageBox.Show("Сначала запустите процесс визуализации");
+            }
+            catch
+            {
+                MessageBox.Show("Ошибка");
+            }
         }
 
         //загрузка по умолчанию при запуске формы

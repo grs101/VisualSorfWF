@@ -29,18 +29,25 @@ namespace VisualSorfWF
         //Вывод в label
         private void button1_Click(object sender, EventArgs e)
         {
-            PictureBox p1 = null;
-            time_sort.Text = null;
-            int[] array = new int[(int)count.Value];
-            int minim = (int)min.Value;
-            int maxim = (int)max.Value;
-            FillArray.generate_rand_data_for_array(ref array, (int)count.Value, minim, maxim);
-            Stopwatch timer = new Stopwatch();
-            timer.Start();
-            Main.start(ref p1, ref comboBox1, array, ref MyThread1, minim, maxim);
-            MyThread1.Join();
-            timer.Stop();
-            time_sort.Text += timer.ElapsedMilliseconds + " ms";
+            try
+            {
+                PictureBox p1 = null;
+                time_sort.Text = null;
+                int[] array = new int[(int)count.Value];
+                int minim = (int)min.Value;
+                int maxim = (int)max.Value;
+                FillArray.generate_rand_data_for_array(ref array, (int)count.Value, minim, maxim);
+                Stopwatch timer = new Stopwatch();
+                timer.Start();
+                Main.start(ref p1, ref comboBox1, array, ref MyThread1, minim, maxim);
+                MyThread1.Join();
+                timer.Stop();
+                time_sort.Text += timer.ElapsedMilliseconds + " ms";
+            }
+            catch
+            {
+                MessageBox.Show("Ошибка. Недостаточно памяти или неверный диапазон");
+            }
         }
     }
 }
