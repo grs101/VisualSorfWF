@@ -45,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\BubbleSort.cs" />
+    <Compile Include="Classes\ReadWriter.cs" />
     <Compile Include="Forms\CalcForm.cs">
       <SubType>Form</SubType>
     </Compile>
