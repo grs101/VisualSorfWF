@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.groupBoxRadiobuttons = new System.Windows.Forms.GroupBox();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.forward = new System.Windows.Forms.Button();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.groupBoxRadiobuttons.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -46,6 +46,26 @@
             this.groupBoxRadiobuttons.TabIndex = 0;
             this.groupBoxRadiobuttons.TabStop = false;
             // 
+            // forward
+            // 
+            this.forward.Location = new System.Drawing.Point(242, 68);
+            this.forward.Name = "forward";
+            this.forward.Size = new System.Drawing.Size(120, 49);
+            this.forward.TabIndex = 2;
+            this.forward.Text = ">>>";
+            this.forward.UseVisualStyleBackColor = true;
+            this.forward.Click += new System.EventHandler(this.forward_Click);
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(74, 96);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(120, 21);
+            this.radioButton2.TabIndex = 1;
+            this.radioButton2.Text = "Визуализация";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
@@ -58,26 +78,6 @@
             this.radioButton1.Text = "Расчет";
             this.radioButton1.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(74, 96);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(120, 21);
-            this.radioButton2.TabIndex = 1;
-            this.radioButton2.Text = "Визуализация";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            // 
-            // forward
-            // 
-            this.forward.Location = new System.Drawing.Point(242, 68);
-            this.forward.Name = "forward";
-            this.forward.Size = new System.Drawing.Size(120, 49);
-            this.forward.TabIndex = 2;
-            this.forward.Text = ">>>";
-            this.forward.UseVisualStyleBackColor = true;
-            this.forward.Click += new System.EventHandler(this.forward_Click);
-            // 
             // ChoiceForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -87,6 +87,7 @@
             this.Name = "ChoiceForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ChoiceForm";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ChoiceForm_FormClosing);
             this.groupBoxRadiobuttons.ResumeLayout(false);
             this.groupBoxRadiobuttons.PerformLayout();
             this.ResumeLayout(false);

@@ -34,5 +34,11 @@ namespace VisualSorfWF
                 mf1.Show();
             }
         }
+
+        //полный выход из программы при закрытии приложения
+        private void ChoiceForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

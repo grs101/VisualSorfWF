@@ -95,5 +95,12 @@ namespace VisualSorfWF
                 MessageBox.Show("Внутренняя ошибка");
             }
         }
+
+        //выход назад в меню выбора
+        private void backButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new ChoiceForm().Show();
+        }
     }
 }

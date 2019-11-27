@@ -29,6 +29,8 @@
 		private void InitializeComponent()
 		{
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.speed_label = new System.Windows.Forms.Label();
+            this.trackBar1 = new System.Windows.Forms.TrackBar();
             this.exit = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.button2 = new System.Windows.Forms.Button();
@@ -41,21 +43,21 @@
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.trackBar1 = new System.Windows.Forms.TrackBar();
-            this.speed_label = new System.Windows.Forms.Label();
+            this.backButton = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.maxLim)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.minLim)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.countElements)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.backButton);
             this.groupBox1.Controls.Add(this.speed_label);
             this.groupBox1.Controls.Add(this.trackBar1);
             this.groupBox1.Controls.Add(this.exit);
@@ -72,15 +74,34 @@
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(860, 112);
+            this.groupBox1.Size = new System.Drawing.Size(983, 112);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Настройки";
             // 
+            // speed_label
+            // 
+            this.speed_label.AutoSize = true;
+            this.speed_label.Location = new System.Drawing.Point(540, 87);
+            this.speed_label.Name = "speed_label";
+            this.speed_label.Size = new System.Drawing.Size(38, 17);
+            this.speed_label.TabIndex = 12;
+            this.speed_label.Text = "0 ms";
+            // 
+            // trackBar1
+            // 
+            this.trackBar1.Location = new System.Drawing.Point(503, 56);
+            this.trackBar1.Maximum = 100;
+            this.trackBar1.Name = "trackBar1";
+            this.trackBar1.Size = new System.Drawing.Size(125, 56);
+            this.trackBar1.TabIndex = 2;
+            this.trackBar1.TickFrequency = 5;
+            this.trackBar1.Scroll += new System.EventHandler(this.trackBar1_Scroll);
+            // 
             // exit
             // 
             this.exit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.exit.Location = new System.Drawing.Point(731, 80);
+            this.exit.Location = new System.Drawing.Point(854, 80);
             this.exit.Margin = new System.Windows.Forms.Padding(4);
             this.exit.Name = "exit";
             this.exit.Size = new System.Drawing.Size(121, 31);
@@ -107,7 +128,7 @@
             // button2
             // 
             this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.Location = new System.Drawing.Point(581, 9);
+            this.button2.Location = new System.Drawing.Point(704, 9);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(132, 44);
             this.button2.TabIndex = 10;
@@ -167,7 +188,7 @@
             // button1
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(720, 9);
+            this.button1.Location = new System.Drawing.Point(843, 9);
             this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(132, 44);
@@ -216,7 +237,7 @@
             this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox2.Size = new System.Drawing.Size(860, 377);
+            this.groupBox2.Size = new System.Drawing.Size(983, 361);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Отображение массива";
@@ -231,34 +252,27 @@
             this.pictureBox1.Location = new System.Drawing.Point(8, 23);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(844, 346);
+            this.pictureBox1.Size = new System.Drawing.Size(967, 330);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // trackBar1
+            // backButton
             // 
-            this.trackBar1.Location = new System.Drawing.Point(503, 56);
-            this.trackBar1.Maximum = 100;
-            this.trackBar1.Name = "trackBar1";
-            this.trackBar1.Size = new System.Drawing.Size(125, 56);
-            this.trackBar1.TabIndex = 2;
-            this.trackBar1.TickFrequency = 5;
-            this.trackBar1.Scroll += new System.EventHandler(this.trackBar1_Scroll);
-            // 
-            // speed_label
-            // 
-            this.speed_label.AutoSize = true;
-            this.speed_label.Location = new System.Drawing.Point(540, 87);
-            this.speed_label.Name = "speed_label";
-            this.speed_label.Size = new System.Drawing.Size(38, 17);
-            this.speed_label.TabIndex = 12;
-            this.speed_label.Text = "0 ms";
+            this.backButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.backButton.Location = new System.Drawing.Point(715, 80);
+            this.backButton.Margin = new System.Windows.Forms.Padding(4);
+            this.backButton.Name = "backButton";
+            this.backButton.Size = new System.Drawing.Size(121, 31);
+            this.backButton.TabIndex = 13;
+            this.backButton.Text = "<<<";
+            this.backButton.UseVisualStyleBackColor = true;
+            this.backButton.Click += new System.EventHandler(this.backButton_Click);
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(892, 513);
+            this.ClientSize = new System.Drawing.Size(1015, 497);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.DoubleBuffered = true;
@@ -272,12 +286,12 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.maxLim)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.minLim)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.countElements)).EndInit();
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
             this.ResumeLayout(false);
 
 		}
@@ -299,6 +313,7 @@
         private System.Windows.Forms.Button exit;
         private System.Windows.Forms.TrackBar trackBar1;
         private System.Windows.Forms.Label speed_label;
+        private System.Windows.Forms.Button backButton;
     }
 }
 
