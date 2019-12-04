@@ -5,7 +5,7 @@ namespace VisualSorfWF
 {
     class BubbleSort
     {
-        //класс сортровки пузырьком
+        //класс сортировки пузырьком
 
         public static void begin(ref int[] array, ref PictureBox pictureBox1, int minimum, int max)
         {

@@ -86,7 +86,7 @@
             this.Controls.Add(this.groupBoxRadiobuttons);
             this.Name = "ChoiceForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ChoiceForm";
+            this.Text = "Sortings";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ChoiceForm_FormClosing);
             this.groupBoxRadiobuttons.ResumeLayout(false);
             this.groupBoxRadiobuttons.PerformLayout();
