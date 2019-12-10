@@ -3,6 +3,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading;
 using System.Windows.Forms;
+using System.IO;
 
 namespace VisualSorfWF
 {
@@ -28,6 +29,33 @@ namespace VisualSorfWF
                 MessageBox.Show("Внутренняя ошибка");
             }
             return null;
+        }
+        public void writeData (ref SaveFileDialog saveFileDialog1, ref int [] array)
+        {
+            try
+            {
+                if (saveFileDialog1.ShowDialog() == DialogResult.Cancel)
+                    return;
+                // получаем выбранный файл
+                string filename = saveFileDialog1.FileName;
+                string line = array.ToString();
+                // сохраняем текст в файл
+                using (StreamWriter sw = new StreamWriter(filename, false, System.Text.Encoding.Default))
+                {
+                    foreach (int elem in array)
+                    {
+                        sw.Write(elem + " ");
+                    }
+                }
+            }
+            catch (NullReferenceException)
+            {
+                MessageBox.Show("Выберите данные для сортировки");
+            }
+            catch
+            {
+                MessageBox.Show("Внутренняя ошибка");
+            }
         }
     }
 }

@@ -2,7 +2,6 @@
 using System.Windows.Forms;
 using System.Threading;
 using System.Diagnostics;
-using System.IO;
 
 namespace VisualSorfWF
 {
@@ -70,30 +69,7 @@ namespace VisualSorfWF
         //Сохраняет в файл данные
         private void saveFileButton_Click(object sender, EventArgs e)
         {
-            try
-            {
-                if (saveFileDialog1.ShowDialog() == DialogResult.Cancel)
-                    return;
-                // получаем выбранный файл
-                string filename = saveFileDialog1.FileName;
-                string line = array.ToString();
-                // сохраняем текст в файл
-                using (StreamWriter sw = new StreamWriter(filename, false, System.Text.Encoding.Default))
-                {
-                    foreach(int elem in array)
-                    {
-                        sw.Write(elem + " ");
-                    }
-                }
-            }
-            catch (NullReferenceException)
-            {
-                MessageBox.Show("Выберите данные для сортировки");
-            }
-            catch
-            {
-                MessageBox.Show("Внутренняя ошибка");
-            }
+            new ReadWriter().writeData(ref saveFileDialog1, ref array);
         }
 
         //выход назад в меню выбора

@@ -10,6 +10,7 @@ namespace VisualSorfWF
         public static int speed = 0;
         static BufferedGraphics buffered;
 
+        //main
         public static void begin(ref PictureBox picBox, int [] array, int max)
         {
             drawMarking(ref picBox);

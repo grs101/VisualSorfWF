@@ -138,7 +138,7 @@ namespace VisualSorfWF
             speed_label.Text = trackBar1.Value.ToString() + " ms";
         }
 
-        //вернуться в менб выбора
+        //вернуться в меню выбора
         private void backButton_Click(object sender, EventArgs e)
         {
             this.Hide();

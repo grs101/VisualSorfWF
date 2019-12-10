@@ -10,7 +10,9 @@ namespace VisualSorfWF
     class HeapSort
     {
         //класс пирамидальной сортировки
-        static Int32 add2pyramid(Int32[] arr, Int32 i, Int32 N)
+
+        //siftDown метод - просеивает элемент вниз
+        static Int32 siftDown(Int32[] arr, Int32 i, Int32 N) 
         {
             Int32 imax;
             Int32 buf;
@@ -37,7 +39,7 @@ namespace VisualSorfWF
             for (Int32 i = len / 2 - 1; i >= 0; --i)
             {
                 long prev_i = i;
-                i = add2pyramid(arr, i, len);
+                i = siftDown(arr, i, len);
                 if (prev_i != i) ++i;
             }
 
@@ -53,7 +55,7 @@ namespace VisualSorfWF
                 while (i != prev_i)
                 {
                     prev_i = i;
-                    i = add2pyramid(arr, i, k);
+                    i = siftDown(arr, i, k);
                 }
             }
         }
