@@ -16,7 +16,7 @@ namespace VisualSorfWF
                     if (arr[j] < buf)
                         break;
 
-                    MethodSwap.start(ref arr[j+1], ref arr[j]);
+                    Swap.start(ref arr[j+1], ref arr[j]);
                     if (picbox != null)
                     {
                         Draw.begin(ref picbox, arr, max);

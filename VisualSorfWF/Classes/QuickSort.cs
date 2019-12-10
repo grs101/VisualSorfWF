@@ -18,7 +18,7 @@ namespace VisualSorfWF
                 if (array[i] < array[maxIndex])
                 {
                     pivot++;
-                    MethodSwap.start(ref array[pivot], ref array[i]);
+                    Swap.start(ref array[pivot], ref array[i]);
                     if (picbox != null)
                     {
                         Draw.begin(ref picbox, array, maxV);
@@ -27,7 +27,7 @@ namespace VisualSorfWF
             }
 
             pivot++;
-            MethodSwap.start(ref array[pivot], ref array[maxIndex]);
+            Swap.start(ref array[pivot], ref array[maxIndex]);
             if (picbox != null)
             {
                 Draw.begin(ref picbox, array, maxV);

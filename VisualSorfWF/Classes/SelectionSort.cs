@@ -17,7 +17,7 @@ namespace VisualSorfWF
                         min = j;
                 }
                 if (min != i)
-                    MethodSwap.start(ref array[i], ref array[min]);
+                    Swap.start(ref array[i], ref array[min]);
                 if (pictureBox1 != null)
                 {
                     Draw.begin(ref pictureBox1, array, max);

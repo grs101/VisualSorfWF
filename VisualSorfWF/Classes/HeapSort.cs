@@ -46,7 +46,7 @@ namespace VisualSorfWF
             //step 2: sorting
             for (Int32 k = len - 1; k > 0; --k)
             {
-                MethodSwap.start(ref arr[0], ref arr[k]);
+                Swap.start(ref arr[0], ref arr[k]);
                 if (picbox != null)
                 {
                     Draw.begin(ref picbox, arr, max);

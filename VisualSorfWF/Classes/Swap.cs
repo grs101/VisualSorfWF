@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace VisualSorfWF
 {
-    class MethodSwap
+    class Swap
     {
         public static void start<T>(ref T a, ref T b)
         {

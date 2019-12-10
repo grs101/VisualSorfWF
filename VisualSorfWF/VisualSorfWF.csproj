@@ -68,7 +68,7 @@
     </Compile>
     <Compile Include="Classes\HeapSort.cs" />
     <Compile Include="Classes\InsertSort.cs" />
-    <Compile Include="Classes\MethodSwap.cs" />
+    <Compile Include="Classes\Swap.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Classes\QuickSort.cs" />
