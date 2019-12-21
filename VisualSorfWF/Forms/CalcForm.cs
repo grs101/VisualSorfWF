@@ -51,7 +51,7 @@ namespace VisualSorfWF
                 Main.start(ref p1, ref comboBox1, array, ref MyThread1, minim, maxim);
                 MyThread1.Join();
                 timer.Stop();
-                time_sort.Text += timer.ElapsedMilliseconds + " ms";
+                time_sort.Text = timer.ElapsedMilliseconds + " ms";
             }
             catch
             {
