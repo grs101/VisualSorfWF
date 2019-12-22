@@ -1,2 +1,2 @@
 # VisualSortWF
-Visualization of various types of sorting (in dev).
+Visualization of various types of sorting.
